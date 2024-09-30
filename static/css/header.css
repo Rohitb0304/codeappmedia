@@ -1,0 +1,206 @@
+/* Styling for the header */
+header {
+    background-color: #8F00FF; /* Updated background color */
+    color: #fff; /* White text color */
+    padding: 15px 20px; /* Increased padding for more space */
+    height: 30px; /* Increased height for the header */
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    margin-bottom: 15px;
+}
+
+/* Flexbox layout for the navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%; /* Ensure navbar takes full header height */
+    padding-right: 20px; /* Add padding to the right */
+}
+
+/* Logo styling */
+.logo a {
+    color: #fff;
+    text-decoration: none;
+    padding-left: 50px;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+/* Styling for the navigation links */
+.links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.links li {
+    margin: 0 15px;
+    position: relative; /* Required for dropdowns */
+}
+
+.links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+
+/* Ghost button styling */
+.ghost-btn {
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.ghost-btn:hover {
+    background-color: #fff;
+    color: #8F00FF;
+}
+
+/* Dropdown menu styling */
+.dropdown-hover:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #8F00FF;
+    border-radius: 5px;
+    top: 100%;
+    left: 0;
+    padding: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+.dropdown-content a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+}
+
+.dropdown-content a:hover {
+    background-color: #7d00e0;
+}
+
+/* Profile icon styling */
+.profile {
+    display: flex;
+    align-items: center;
+    padding-right: 20px; /* Add padding to the right */
+}
+
+.profile-icon {
+    position: relative;
+    cursor: pointer;
+    color: #fff;
+    font-size: 24px;
+}
+
+.profile-icon i {
+    margin-right: 10px;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #444;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+.dropdown ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown ul li {
+    padding: 10px;
+}
+
+.dropdown ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.dropdown ul li a:hover {
+    background-color: #555;
+}
+
+.dropdown.open {
+    display: block;
+}
+
+/* Toggle button styling for smaller screens */
+.toggle_btn {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.dropdown_menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #8F00FF;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    overflow: auto;
+    flex-direction: column; /* Align items vertically */
+}
+
+.dropdown_menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown_menu ul li {
+    padding: 10px;
+    text-align: center;
+}
+
+.dropdown_menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.dropdown_menu ul li a:hover {
+    background-color: #7d00e0;
+}
+
+.dropdown_menu.open {
+    display: flex; /* Change to flex display */
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 768px) {
+    .links {
+        display: none;
+    }
+
+    .toggle_btn {
+        display: block;
+    }
+}

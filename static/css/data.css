@@ -1,0 +1,89 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #32292F;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #32292F;
+    color: white;
+    border-bottom: 2px solid #8F00FF;
+}
+.header h1 {
+    margin: 0;
+}
+.back-button {
+    background-color: #fff;
+    border: none;
+    color: #32292F;
+    padding: 10px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 16px;
+    width: 110px;
+}
+.back-button:hover {
+    background-color: #32292F; /* Hover background color */
+    color: #fff; /* Hover text color */
+}
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 10px;
+}
+.page-container {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ddd;
+    width: 100%;
+    max-width: 320px; /* Max width for better control on smaller screens */
+    box-sizing: border-box;
+}
+.page-container h2 {
+    color: #32292F;
+    margin: 0;
+    margin-right: 20px;
+    white-space: nowrap; /* Prevents text from wrapping */
+}
+.divider {
+    width: 1px;
+    background-color: #8F00FF;
+    height: 40px;
+    margin-right: 20px;
+}
+.sub-topics {
+    color: #8F00FF;
+    display: flex;
+    flex-wrap: wrap;
+}
+.sub-topic {
+    margin-right: 10px; /* Horizontal spacing between sub-points */
+    margin-bottom: 5px; /* Vertical spacing between sub-points */
+}
+.sub-topic a {
+    color: #8F00FF;
+    text-decoration: none; /* Remove underline from links */
+}
+.sub-topic a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+@media (max-width: 768px) {
+    .page-container {
+        width: calc(50% - 20px); /* Two per row for tablets */
+    }
+}
+@media (max-width: 480px) {
+    .page-container {
+        width: calc(100% - 20px); /* Full width for mobile devices */
+    }
+}

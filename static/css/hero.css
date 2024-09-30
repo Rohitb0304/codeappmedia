@@ -1,0 +1,1093 @@
+/* General Styles */
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Cormorant','Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.header{
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.section {
+    margin-top: 20px; /* Adjust as needed */
+}
+
+
+.hidden {
+    display: none;
+}
+
+/* Carousel container start */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background-color: transparent; /* Ensure background color does not interfere */
+    margin-top: 50px; /* Adjust spacing if needed */
+}
+
+/* Carousel */
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 900px; /* Increased height for the carousel */
+    overflow: hidden;
+    z-index: 500; /* Ensure it's below the header */
+    padding-bottom: 5px; /* Add padding below the carousel images */
+}
+
+/* Carousel slide */
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0; /* Initial position set to left for correct display */
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Slide image styling */
+.carousel-slide img {
+    width: 100%;
+    height: 100%; /* Ensure image covers the entire height */
+    object-fit: cover; /* Ensures the image covers the area without stretching */
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Text on the slide */
+.carousel-text {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    color: white;
+    z-index: 1; /* Ensures text is above the image */
+}
+
+/* Carousel title styling */
+.carousel-text h1 {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+/* Carousel description styling */
+.carousel-text p {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+/* Ghost button styling */
+.ghost-btn {
+    background: none;
+    border: 2px solid #fff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.ghost-btn:hover {
+    background: #fff;
+    color: #000;
+    border-color: #000;
+}
+
+/* Ensure no unwanted white background */
+.carousel-slide img,
+.carousel-text {
+    background-color: transparent; /* Ensures no background color leaks */
+}
+
+/* Define slide positions */
+.carousel-slide:nth-child(1) { transform: translateX(0); }
+.carousel-slide:nth-child(2) { transform: translateX(100%); }
+.carousel-slide:nth-child(3) { transform: translateX(200%); }
+.carousel-slide:nth-child(4) { transform: translateX(300%); }
+
+/* Add keyframes for sliding animation */
+@keyframes slide {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+/* Wave container */
+.wave-container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 90px; /* Adjust height as needed */
+    overflow: hidden;
+    z-index: 1; /* Ensure it’s above the carousel background */
+}
+
+.wave-container svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* carousel end  */
+
+
+/* Compilers Info Container */
+.compilers-info {
+    text-align: center;
+    margin-top: 150px;
+    margin-bottom: 250px;
+    padding: 20px;
+    color: #333;
+    z-index: 3;
+}
+
+/* Highlighted Text */
+.highlight {
+    color: #8F00FF;
+    font-weight: bold;
+}
+.game-game {
+    color: #FF8F00;
+    font-weight: bold;
+}
+
+/* Compilers Info Text */
+.compilers-info p {
+    font-size: 2.2rem;
+    margin: 20px 0;    
+}
+
+/* Compilers Info Text */
+.compilers-info .welcome{
+    text-align: left;
+    padding: 70px;
+    font-size: 2.2rem;
+    margin: 20px 0;    
+}
+
+/* Button Container */
+.button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+/* Lines beside the button */
+.line {
+    height: 2px;
+    width: 100px;
+    background-color: #BDBDBD;
+    margin: 0 10px;
+}
+
+/* Start Button */
+.start-button {
+    background: linear-gradient(to right, #8F00FF 65%, #AE46FF 100%);
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    font-weight: bold;
+    text-transform: uppercase;
+    z-index: 2;
+}
+
+.start-button:hover {
+    background: linear-gradient(to right, #AE46FF 65%, #8F00FF 100%);
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Game Button */
+.game-button {
+    background: linear-gradient(to right, #FF8F00 65%, #FFAE46 100%);
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 20px;
+    z-index: 999;
+}
+
+.game-button:hover {
+    background: linear-gradient(to right, #FFAE46 65%, #FF8F00 100%);
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* General scroll animation */
+.scroll-animation {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-animation.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Button animations */
+.scroll-animation-button {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0
+}
+
+/* Add an animation class to animate scroll elements */
+.animate {
+    animation: fadeInUp 0.9s ease-in-out forwards;
+}
+
+/* Define keyframes for the animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(1px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Optional: for smooth scroll to top */
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* Auth popup styling */
+.auth-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Slightly darker semi-transparent background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; /* Ensure it's on top of other elements */
+    visibility: hidden; /* Initially hidden */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition */
+}
+
+.auth-popup.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+.auth-popup-content {
+    background-color: #fff;
+    border-radius: 12px; /* Slightly more rounded corners */
+    padding: 2rem;
+    max-width: 90%;
+    width: 400px; /* Fixed width for better control */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    position: relative;
+    animation: fadeIn 0.3s ease-out; /* Smooth fade-in effect */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center-align items horizontally */
+}
+
+/* Close button styling */
+.auth-popup .close-popup {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 1.8rem; /* Slightly larger for better visibility */
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.auth-popup .close-popup:hover {
+    color: #ff0000; /* Change color on hover for better visibility */
+}
+
+/* Title styling */
+.auth-popup .h2-bg {
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #8F00FF; /* Decorative border for title */
+    padding-bottom: 0.5rem;
+}
+
+.auth-popup h2 {
+    margin: 0;
+    font-size: 1.75rem; /* Slightly larger font size for title */
+    color: #333;
+    text-align: center; /* Center-align the title */
+}
+
+/* Button container styling */
+.button-container {
+    display: flex;
+    justify-content: center; /* Center-align buttons horizontally */
+    gap: 1rem; /* Space between buttons */
+}
+
+/* Button styling */
+.auth-popup button {
+    background-color: #8F00FF;
+    color: #fff;
+    border: none;
+    border-radius: 6px; /* Slightly larger border-radius */
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem; /* Slightly larger font size */
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Added transform for hover effect */
+}
+
+.auth-popup button:hover {
+    background-color: #751bb5;
+    transform: scale(1.05); /* Slightly increase button size on hover */
+}
+
+/* Link styling */
+.auth-popup a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+
+/*  Auth popup styling END */
+
+
+/* Hero Section */
+.hero {
+    display: contents;
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    text-align: center; /* Center text */
+    height: 100vh; /* Full viewport height */
+    padding: 20px; /* Add some padding */
+    position: relative; /* For potential absolute positioning of children */
+    background-color: #f4f4f4; /* Background color if needed */
+}
+
+.hero h1 {
+    font-size: 3rem; /* Adjust size as needed */
+    color: #8F00FF;
+    margin: 0;
+}
+
+.hero p {
+    font-size: 1.2rem; /* Adjust size as needed */
+    color: #333; /* Change color as needed */
+}
+
+
+#particles-js {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: -10;
+    /* overflow: hidden; */
+}
+
+
+
+
+
+
+
+/* Courses Section */
+.courses {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 20px;
+    justify-content: center; /* Center the content */
+    margin-bottom: 250px;
+}
+
+/* Card Container */
+.card {
+    position: relative;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+    width: calc(40% - 10px); /* Two cards per row with gap */
+    height: 300px;
+    padding: 20px;
+    display: flex; /* Flexbox to align text and button */
+    justify-content: space-between; /* Space between text and button */
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .card {
+        width: calc(50% - 10px); /* Adjust for smaller screens */
+        flex-direction: column; /* Stack content on smaller screens */
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: 100%; /* Full width on very small screens */
+    }
+}
+
+/* Card Content */
+.card-content {
+    width: 60%; /* Text occupies 60% of the card */
+    z-index: 1;
+}
+
+.card h2 {
+    margin: 20px 0 10px;
+    font-family: 'Lucida Sans', sans-serif;
+    font-size: 2rem;
+    font-weight: normal;
+    color: #8F00FF;
+}
+
+.card p {
+    margin: 0 0 20px;
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+/* Button Container with String Effect */
+.btn-container {
+    width: 40%; /* Button and string occupy 40% of the card */
+    position: relative; /* Ensures button can be absolutely positioned relative to this container */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    justify-content: flex-start; /* Align items at the top */
+}
+
+/* String Positioning */
+.string {
+    width: 2px;
+    height: 150px; /* Length of the string */
+    background-color: #000;
+    margin-bottom: 0px; /* Space below the string for button */
+    animation: growString 2s ease forwards;
+}
+
+/* Buttons in Courses Section */
+.course-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background: linear-gradient(135deg, #8F00FF 65%, #AE46FF 100%);
+    border: 2px solid transparent;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 0px; /* Space above the button */
+}
+
+/* Ensure button is centered below the string */
+.btn-container .course-btn {
+    margin-top: 0px; /* Space below the string for button */
+}
+
+.course-btn:hover {
+    background: linear-gradient(135deg, #AE46FF 65%, #8F00FF 100%);
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Hover Effect */
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.card:hover h2,
+.card:hover p {
+    color: #8F00FF;
+}
+
+/* Dropdown Animation */
+@keyframes dropDown {
+    0% {
+        top: -60px;
+    }
+    60% {
+        top: 40%;
+    }
+    100% {
+        top: 40%;
+    }
+}
+
+/* String Growth Animation */
+@keyframes growString {
+    0% {
+        height: 0;
+    }
+    60% {
+        height: 100px;
+    }
+    100% {
+        height: 100px;
+    }
+}
+
+/* Extra Card */
+.extra-card {
+    width: calc(40% - 10px); /* Width similar to other cards */
+    height: auto; /* Adjust height based on content */
+    padding: 20px;
+    background: transparent;
+    border-radius: 8px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the start (left) */
+    justify-content: flex-start; /* Align items to the start (top) */
+}
+
+/* Heading inside the extra card */
+.extra-card h2 {
+    font-size: 2.5rem; /* Adjusted font size for better readability */
+    color: #8F00FF;
+    margin: 0 0 15px; /* Space below the heading */
+}
+
+/* Paragraph inside the extra card */
+.extra-card p {
+    margin: 0 0 20px; /* Gap between paragraph and button */
+    color: #333;
+    font-size: 1.2rem;
+}
+
+/* Extra Button Container */
+.extra-btn-container {
+    display: flex;
+    align-items: center; /* Center button vertically relative to paragraph */
+}
+
+/* Extra Button */
+.extra-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background: linear-gradient(135deg, #8F00FF 65%, #AE46FF 100%);
+    border: 2px solid transparent;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: right;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 10px; /* Space above the button */
+}
+
+/* Extra Button Hover Effect */
+.extra-card .extra-btn:hover {
+    background: linear-gradient(135deg, #AE46FF 65%, #8F00FF 100%);
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive adjustments for extra cards */
+@media (max-width: 768px) {
+    .extra-card {
+        width: calc(50% - 10px); /* Adjust for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .extra-card {
+        width: 100%; /* Full width on very small screens */
+    }
+}
+
+
+
+
+
+/* CTA Button styling */
+.cta-button {
+    display: inline-block;
+    margin-left: 15px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: #8f46bc; /* Matching the card-btn color */
+    color: white;
+    border: 2px solid #8f46bc;
+    border-radius: 5px;
+    text-decoration: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, transform 0.5s ease, visibility 0s 0.5s, box-shadow 0.3s ease, text-shadow 0.3s ease;
+    transform: translateY(-10px);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Button appear on hover */
+h1:hover .cta-button {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition-delay: 0s;
+    box-shadow: 0 0 18px rgba(143, 70, 188, 0.5); /* Glow effect */
+    text-shadow: 0 0 12px rgba(143, 70, 188, 0.7); /* Glowing text effect */
+}
+
+/* Section Padding */
+.section-padding {
+    padding: 60px 0;
+}
+
+
+.ar-service-section {
+    display: flex; /* Enable flexbox */
+    flex-direction: column; /* Arrange children in a column */
+    align-items: center; /* Center align children horizontally */
+    height: auto; /* Adjust height based on content */
+    padding: 20px 0; /* Add vertical padding */
+    margin-bottom: 200px;
+}
+
+/* Container for AR Service Cards */
+.ar-service-cards {
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 1200px;
+    width: 100%; /* Ensure full width on smaller screens */
+    height: auto; /* Ensure height is auto */
+}
+
+/* Heading for AR Service Cards */
+.ar-service-cards h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #8F00FF;
+    margin-bottom: 20px;
+}
+
+/* Container for the cards */
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Card Styles */
+.ar-card {
+    background-color: #ffffff; /* Black background */
+    position: relative;
+    border: 2px solid; /* 2px border */
+    border-image: linear-gradient(135deg, #D9A8FF, #560099); /* Gradient border */
+    border-image-slice: 1;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 290px;
+    height: 650px; /* Adjust to fit content */
+    padding: 20px;
+    text-align: center;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Card Hover Effect */
+.ar-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Heading inside the card */
+.ar-card h2 {
+    font-size: 1.5rem;
+    color: #8F00FF;
+    margin-bottom: 15px;
+    text-align: center; /* Center heading text */
+}
+
+/* SVG Container */
+.svg-container {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center; /* Center SVG container */
+}
+
+/* SVG Styling */
+.ar-card svg {
+    fill: #8F00FF; /* Fill color for SVG */
+    stroke: none; /* Remove stroke */
+}
+
+/* Paragraph inside the card */
+.ar-card p {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    color: #333333;
+    font-weight: 300;
+    text-align: center; /* Center paragraph text */
+}
+
+/* Subheading inside the card */
+.ar-card h3 {
+    margin-bottom: 15px;
+    color: #333333;
+    font-size: 1.875rem; /* 30px */
+    text-align: center; /* Center heading text */
+}
+
+/* List inside the card */
+.ar-card ul {
+    list-style: none;
+    padding: 20px;
+    margin: 0;
+    text-align: left; /* Left-align list items */
+}
+
+/* List item inside the card */
+.ar-card li {
+    margin-bottom: 10px;
+    color: #333333; /* Changed to #000 for consistency */
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+    justify-content: left; /* Left-align list items */
+}
+
+/* SVG inside list items */
+.ar-card li svg {
+    margin-right: 10px;
+    fill: #8F00FF; /* Fill color for SVG inside list items */
+    stroke: none; /* Remove stroke */
+}
+
+/* Button Styling for Cards */
+.ar-btn {
+    display: inline-block;
+    position: absolute; /* Absolute positioning to place at the bottom */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
+    bottom: 10px; /* 10px padding from the bottom */
+    padding: 10px 20px;
+    margin-bottom: 15px;
+    width: 150px;
+    text-align: center;
+    font-size: 1rem;
+    color: #fff; /* Text color */
+    background: linear-gradient(135deg, #8F00FF 65%, #AE46FF 100%); /* Gradient background */
+    border: 2px solid transparent; /* Transparent border to show gradient */
+    border-radius: 5px; /* Border radius added */
+    text-decoration: none;
+    transition: background-color 0.8s ease, color 0.8s ease, border 0.8s ease, box-shadow 0.8s ease, text-shadow 0.8s ease; /* Slower transition for button hover effect */
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 0 0 18px rgba(143, 70, 188, 0.5); /* Default glow effect */
+}
+
+/* Glow Effect on Hover */
+.ar-btn:hover {
+    color: #8F00FF; /* Text color on hover */
+    background: #fff; /* Background color on hover */
+    box-shadow: 0 0 22px rgba(143, 70, 188, 0.8); /* Intense glow effect on hover */
+    text-shadow: 0 0 18px rgba(143, 70, 188, 0.7); /* Glowing text effect */
+}
+
+/* Button Hover Animation */
+.ar-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.5s ease; /* Slower transition for hover effect */
+    z-index: 0;
+}
+
+.ar-btn:hover::before {
+    transform: scaleX(1); /* Scale X animation on hover */
+}
+
+.ar-btn span {
+    position: relative;
+    z-index: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .ar-service-cards h1 {
+        font-size: 2rem; /* Adjust heading font size for smaller screens */
+    }
+
+    .ar-card {
+        width: 100%; /* Full width cards for smaller screens */
+        max-width: 300px; /* Limit max-width to maintain a good layout */
+        height: auto; /* Adjust height to fit content */
+    }
+
+    .ar-btn {
+        width: auto; /* Adjust button width for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .ar-service-cards h1 {
+        font-size: 1rem; /* Further reduce heading font size for very small screens */
+    }
+
+    .ar-card {
+        width: 100%; /* Full width cards for very small screens */
+        max-width: 280px; /* Further limit max-width for very small screens */
+    }
+}
+
+
+/* Container for the trusted information */
+.trusted-container {
+    position: relative;
+    padding: 20px;
+    background-color: #8f46bc;
+    border-radius: 8px;
+    /* background-image: url('https://res.cloudinary.com/dsgd7p4bc/image/upload/v1723141318/WhatsApp_Image_2024-08-08_at_11.51.30_PM_vsfs6t.jpg'); */
+    background-size: cover; /* Ensure the background image covers the container */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent image repetition */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 20px auto;
+    width: 100%;
+    height: 200px; /* Set a fixed height for visibility */
+    margin-bottom: 100px;
+    /* z-index: 100; */
+}
+
+
+/* Heading inside the trusted container */
+.trusted-container h2 {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.trusted-container p {
+    font-size: 1.5rem; /* Adjusted font size for better readability on small screens */
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+/* Container for count items */
+.counts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center align items */
+    gap: 20px; /* Space between items */
+}
+
+/* Individual count item */
+.count-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+.count-number {
+    font-size: 2rem;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .trusted-container {
+        padding: 15px;
+        margin: 15px;
+    }
+
+    .trusted-container h2 {
+        font-size: 1.5rem; /* Adjust heading font size for smaller screens */
+    }
+
+    .trusted-container p {
+        font-size: 1.2rem; /* Adjust paragraph font size for smaller screens */
+    }
+
+    .count-item {
+        font-size: 1.2rem; /* Adjust font size for count items */
+    }
+
+    .count-number {
+        font-size: 1.5rem; /* Adjust font size for count numbers */
+    }
+}
+
+@media (max-width: 480px) {
+    .trusted-container {
+        padding: 10px;
+        margin: 10px;
+    }
+
+    .trusted-container h2 {
+        font-size: 1.2rem; /* Further reduce heading font size for very small screens */
+    }
+
+    .trusted-container p {
+        font-size: 1rem; /* Further reduce paragraph font size for very small screens */
+    }
+
+    .count-item {
+        font-size: 1rem; /* Further reduce font size for count items */
+    }
+
+    .count-number {
+        font-size: 1.2rem; /* Further reduce font size for count numbers */
+    }
+}
+
+.custom-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+}
+
+.custom-card {
+    position: relative;
+    width: calc(50% - 20px); /* Two cards per row on desktop */
+    height: 400px; /* Set a fixed height for the card */
+    overflow: hidden;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.custom-card:hover {
+    transform: translateY(-10px); /* Slight lift on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+.custom-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 1.5s ease; /* Transition effect for opacity with delay */
+    z-index: 0;
+}
+
+.custom-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the entire card without distortion */
+}
+
+.custom-card:hover .custom-image {
+    opacity: 1; /* Fully visible on hover */
+}
+
+.custom-text {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+    color: #333;
+    transition: color 0.5s ease;
+}
+
+.custom-card:hover .custom-text {
+    color: white; /* Change text color on hover */
+}
+
+
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); /* Start slightly lower */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Move to original position */
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .custom-card {
+        width: 100%; /* Full width on smaller screens */
+    }
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .courses {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 400px; /* Adjust as needed for smaller screens */
+    }
+
+    .cta-button {
+        font-size: 1rem; /* Adjust font size on smaller screens */
+        padding: 8px 16px; /* Adjust padding */
+    }
+}
+
+@media (max-width: 480px) {   
+    .card {
+        width: 100%;
+        height: auto; /* Adjust height for smaller screens */
+    }
+
+    .card-btn {
+        width: auto; /* Adjust button width */
+        font-size: 0.9rem; /* Adjust font size */
+    }
+}
